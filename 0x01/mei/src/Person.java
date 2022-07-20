@@ -37,8 +37,9 @@ public class Person {
 
     public int calculateAge() {
         Calendar today = Calendar.getInstance();
-        int age = today.get(Calendar.YEAR) - birthDate.getYear();
-
+        Calendar birthdayCalendar = Calendar.getInstance();
+        birthdayCalendar.setTime(birthDate);
+        int age = today.get(Calendar.YEAR) - birthdayCalendar.get(Calendar.YEAR);
         return age;
     }
 
